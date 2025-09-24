@@ -176,8 +176,11 @@ async function exportAllToCSV() {
 async function login() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
+  const loginLoading = document.getElementById("loginLoading");
 
   try {
+    loginLoading.style.display = "flex"; // MOSTRA loading
+
     const res = await fetch("http://127.0.0.1:5000/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -194,9 +197,11 @@ async function login() {
     document.getElementById("metricsSection").style.display = "block";
     document.getElementById("userInfo").textContent = `${username} (${userRole})`;
 
-    loadMetrics(1);
+    await loadMetrics(1);
   } catch (e) {
     alert("Erro: " + e.message);
+  } finally {
+    loginLoading.style.display = "none"; // ESCONDE loading
   }
 }
 
