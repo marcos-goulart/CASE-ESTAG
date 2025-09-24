@@ -1,3 +1,5 @@
 flask
 pandas 
-uvicorn
+flask-cors
+pyjwt
+gunicorn
