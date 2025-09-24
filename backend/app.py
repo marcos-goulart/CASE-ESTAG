@@ -18,7 +18,8 @@ app.config["SECRET_KEY"] = "minha_chave_super_secreta"
 
 # ---------------- Carregar usuários do CSV ---------------- #
 users = {}
-users_path = "users.csv"
+users_path = os.path.join(os.path.dirname(__file__), "users.csv")
+
 if os.path.exists(users_path):
     with open(users_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
