@@ -1,0 +1,244 @@
+/* ======= Base ======= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 2.5rem;
+  background: #f9f9f9;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+h2 {
+  margin: 0 0 10px;
+}
+
+button {
+  cursor: pointer;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* ======= Header ======= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #d2d2d2ff; /* cor e espessura da linha */
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#userInfo {
+  font-weight: bold;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* ======= Card ======= */
+.card {
+  max-width: 320px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card input {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* ======= Login ======= */
+#loginSection {
+  width: 320px;
+  margin: 100px auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#loginSection h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+#loginSection input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+#loginSection input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#loginBtn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #3a91deff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#loginBtn:hover {
+  background-color: #0056b3;
+}
+
+/* ======= Table ======= */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #eaeaea;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+/* zebra mais visível */
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+/* hover visível e transição suave */
+tr {
+  transition: background 0.12s ease;
+}
+
+tr:hover {
+  background: #d7d7d7ff; 
+}
+
+/* hover para cabeçalho (feedback ao passar o mouse) */
+th:hover {
+  background-color: #d7d7d7ff;
+}
+
+/* foco acessível (caso você torne células/linhas focáveis com tabindex) */
+tr:focus-within {
+  outline: 3px solid rgba(0,123,255,0.25);
+  outline-offset: -3px;
+}
+
+/* ======= Pagination ======= */
+#pagination {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ======= Dark Theme ======= */
+body.dark {
+  background: #181818;
+  color: #eee;
+}
+
+body.dark .card {
+  background: #222;
+  color: #eee;
+}
+
+body.dark table {
+  border-color: #444;
+}
+
+body.dark th {
+  background: #1b1b1bff;
+  color: #eee;
+}
+
+body.dark tr:nth-child(even) {
+  background: #4c4c4cff;
+}
+
+body.dark tr:nth-child(odd) {
+  background: #343434ff;
+}
+
+/* hover no tema escuro (contraste adequado) */
+body.dark tr:hover {
+  background: #3f3f3fff;
+}
+
+body.dark th:hover {
+  background-color: #3b3b3b;
+}
+
+body.dark tr:focus-within {
+  outline: 3px solid rgba(0, 123, 255, 0.2);
+  outline-offset: -3px;
+}
+
+body.dark button {
+  background: #ad0000ff;
+}
+
+body.dark button:hover {
+  background: #7d0000ff;
+}
+
+body.dark .header{
+  border-bottom: 2px solid #808080ff;
+}
