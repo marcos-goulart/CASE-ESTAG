@@ -51,7 +51,7 @@ def try_parse_date(ts_str):
 
 # ---------------- Carregar métricas do CSV (todas colunas) ---------------- #
 metrics_data = []
-metrics_path = "metrics.csv"
+metrics_path = os.path.join(os.path.dirname(__file__), "metrics.csv")
 if os.path.exists(metrics_path):
     with open(metrics_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
