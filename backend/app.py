@@ -18,7 +18,7 @@ app.config["SECRET_KEY"] = "minha_chave_super_secreta"
 
 # ---------------- Carregar usuários do CSV ---------------- #
 users = {}
-users_path = os.path.join(os.path.dirname(__file__), "users.csv")
+users_path = "users.csv"
 
 if os.path.exists(users_path):
     with open(users_path, newline="", encoding="utf-8") as f:
@@ -51,7 +51,7 @@ def try_parse_date(ts_str):
 
 # ---------------- Carregar métricas do CSV (todas colunas) ---------------- #
 metrics_data = []
-metrics_path = os.path.join(os.path.dirname(__file__), "metrics.csv")
+metrics_path = "metrics.csv"
 if os.path.exists(metrics_path):
     with open(metrics_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)

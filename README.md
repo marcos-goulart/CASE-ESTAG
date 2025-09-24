@@ -59,8 +59,6 @@ No diretório `backend/`:
    http://127.0.0.1:5000
    ```
 
-3. Mudar o fecth e url para o endereço local, apenas descomentar o local e comentar o servidor
-
 ### 3. Abrir o frontend
 
 * Basta abrir o arquivo `frontend/index.html` no navegador.
