@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    // const res = await fetch("http://127.0.0.1:5000/metrics?page=1&limit=1", {
+    // const res = await fetch("http://127.0.0.1:5000/metrics?page=1&limit=1", { local
     const res = await fetch("https://case-estag-api.onrender.com/metrics?page=1&limit=1", {
       headers: { Authorization: `Bearer ${token}` }
     });
