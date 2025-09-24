@@ -67,12 +67,7 @@ No diretório `backend/`:
 
 ---
 
-## 🌐 GitHub Pages
-
-O **frontend** também está publicado no GitHub Pages:
-👉 [https://seu-usuario.github.io/CASE-ESTAG/frontend/](https://seu-usuario.github.io/CASE-ESTAG/frontend/)
-
-> ⚠️ **Importante**: Para funcionar corretamente, você ainda pode precisa rodar a **API localmente**.
+> ⚠️ **Importante**: Para funcionar corretamente, você precisa rodar a **API localmente**.
 
 ---
 
