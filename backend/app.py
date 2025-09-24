@@ -23,13 +23,15 @@ if os.path.exists(users_path):
     with open(users_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            username = row.get("username")
+            username = (row.get("username") or "").strip()
+            password = (row.get("password") or "").strip()
+            role = (row.get("role") or "").strip()
             if not username:
                 continue
             users[username] = {
-                "password": row.get("password", ""),
-                "role": row.get("role", "")
-            }
+                "password": password,
+                "role": role
+        }
 else:
     print(f"[WARN] users.csv não encontrado em {os.path.abspath(users_path)}. Usando dict vazio.")
 

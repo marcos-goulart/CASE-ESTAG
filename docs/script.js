@@ -18,7 +18,9 @@ function setToken(token) {
 
 async function fetchMetrics(page, date) {
   const token = getToken();
-  let url = `http://127.0.0.1:5000/metrics?page=${page}&limit=${limit}`;
+  // let url = `http://127.0.0.1:5000/metrics?page=${page}&limit=${limit}`; // local
+  let url = `https://case-estag-api.onrender.com/metrics?page=${page}&limit=${limit}`;
+
   if (date) {
     url += `&date=${encodeURIComponent(date)}`;
   }
@@ -151,7 +153,8 @@ async function exportAllToCSV() {
     const token = getToken();
     if (!token) { alert("Faça login para exportar."); return; }
     const date = document.getElementById("dateFilter").value;
-    let url = `http://127.0.0.1:5000/metrics/export?`;
+    // let url = `http://127.0.0.1:5000/metrics/export?`; // local
+    let url = `https://case-estag-api.onrender.com/metrics/export?`;
     if (date) url += `date=${encodeURIComponent(date)}&`;
     if (sortColumn) url += `sort_by=${encodeURIComponent(sortColumn)}&sort_order=${encodeURIComponent(sortOrder)}`;
     const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
@@ -177,7 +180,8 @@ async function login() {
   const password = document.getElementById("password").value;
 
   try {
-    const res = await fetch("http://127.0.0.1:5000/login", {
+    // const res = await fetch("http://127.0.0.1:5000/login", {
+    const res = await fetch("https://case-estag-api.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password })
@@ -276,7 +280,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const res = await fetch("http://127.0.0.1:5000/metrics?page=1&limit=1", {
+    // const res = await fetch("http://127.0.0.1:5000/metrics?page=1&limit=1", {
+    const res = await fetch("https://case-estag-api.onrender.com/metrics?page=1&limit=1", {
       headers: { Authorization: `Bearer ${token}` }
     });
     if (res.ok) {
